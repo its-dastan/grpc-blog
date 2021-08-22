@@ -4,7 +4,7 @@ import "github.com/globalsign/mgo"
 
 const (
 	host = "localhost:27017"
-	dbs  = "go-blog"
+	dbs  = "grpc-blog"
 )
 
 var globalS *mgo.Session
@@ -25,5 +25,4 @@ func Connect(collection string) (*mgo.Session, *mgo.Collection) {
 	s := globalS.Copy()
 	c := s.DB("").C(collection)
 	return s, c
-
 }
